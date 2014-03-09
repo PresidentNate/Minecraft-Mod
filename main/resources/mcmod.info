@@ -1,0 +1,31 @@
+[
+{
+  "modid": "ExampleMod",
+  "name": "Example",
+  "description": "Example placeholder mod.",
+  "version": "0.0.1",
+  "mcversion": "0.0.0",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["ExampleDude"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+},
+
+{
+    "modid":"effectblock",
+    "name":"Effect Block",
+    "description":"A full beacon in a block! \n Change Log:\n 0.0.1: Getting Started \n 0.0.3: The Block is created and textured!",
+    "version":"0.0.3",
+    "mcversion": "${mcversion}",
+    "url":"",
+    "updateUrl":"",
+    "authors":["NateSnowstorm","NateSnowstorm"],
+    "credits":"Forge, FML and MCP for making the mods possible and of course, Mojang, for making the game!",
+    "logFile":"",
+    "screenshots": [],
+    "dependencies": []
+}
+]
