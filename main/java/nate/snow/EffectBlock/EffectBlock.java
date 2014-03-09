@@ -14,6 +14,12 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+/** EffectBlock.java
+ * Programmed by: Nathan Soucy
+ * This is just a simple Mod that adds a new block to the game, 
+ * which will give you the power of a full beacon in one block!
+ * It's almost too powerful, but also incredibly expensive.
+ */
 
 @Mod(modid=EffectBlock.MODID, name=EffectBlock.name, version=EffectBlock.version)
 public class EffectBlock {
@@ -32,20 +38,16 @@ public class EffectBlock {
 		
 		Item netherStar = (Item) Item.itemRegistry.getObject("nether_star");
 		
-	
+		/** Sets values for the block */
 		effectBlock = new NatesBlocks(Material.glass)
 		.setBlockName("EffectBlock")
 		.setHardness(5.0F)
 		.setStepSound(Block.soundTypeMetal)
 		.setCreativeTab(CreativeTabs.tabMisc)
-		.setLightLevel(-15.0F)
+		.setLightLevel(-50.0F)
 		.setResistance(5.0F)
-		.setBlockTextureName(EffectBlock.MODID+":"+"effect_block")
-		.setLightOpacity(0);
-		
-		effectBlock.setTickRandomly(false);
-		effectBlock.isOpaqueCube();
-		
+		.setBlockTextureName(EffectBlock.MODID+":"+"effect_block");
+				
 		effectBlock.setHarvestLevel("pickaxe", 3);
 		
 		GameRegistry.registerBlock(effectBlock, effectBlock.getUnlocalizedName().substring(5));

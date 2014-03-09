@@ -6,6 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
+/** NatesBlocks.java 
+ * This is just the super class that sets up the main block, without adding any potion effects.
+ */
 
 public class NatesBlocks extends Block {
 
