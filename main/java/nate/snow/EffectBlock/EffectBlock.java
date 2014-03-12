@@ -63,7 +63,8 @@ public class EffectBlock {
 		.setTextureName(EffectBlock.MODID + ":" + "lightning_rod")
 		.setCreativeTab(CreativeTabs.tabCombat)
 		.setMaxStackSize(1)
-		.setMaxDamage(5000);
+		.setMaxDamage(5000)
+		.setFull3D();
 		
 		GameRegistry.registerItem(lightningRod, "Lightning Rod");
 

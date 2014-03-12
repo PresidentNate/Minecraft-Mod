@@ -48,9 +48,14 @@ public class NatesItems extends Item {
 	 * Currently only sets the mob/player on fire, but will also strike lightning and kill them.
 	 */
 	public boolean onLeftClickEntity(ItemStack itemStack, EntityPlayer ePlayer, Entity entity) {
+		Item xpItems = (Item) Item.itemRegistry.getObject("experience_bottle");
+		ItemStack xp = new ItemStack( xpItems );
 		
 		entity.setFire(5);
 		
+	//	entity.setDead();
+	//	entity.entityDropItem(xp, 5.0F);
+	//	System.out.println(entity.entityDropItem(xp, 5.0F));
 		
 		itemStack.damageItem(2, ePlayer);
 		
