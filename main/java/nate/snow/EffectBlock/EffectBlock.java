@@ -30,7 +30,6 @@ public class EffectBlock {
 	public static final String name = "Effect Block";
 		
 	public static Block effectBlock;
-	public static Block chestHopper;
 	public static Item lightningRod;
 	
 	@EventHandler
