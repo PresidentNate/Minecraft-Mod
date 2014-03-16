@@ -32,6 +32,12 @@ public class EffectBlock {
 	public static Block effectBlock;
 	public static Item lightningRod;
 	
+	/* Dyeable diamond armor concept, know you can have multi-colored armor and still have good protection! */
+	public static Item dyeableDiamondHelmet;
+	public static Item dyeableDiamondChestplate;
+	public static Item dyeableDiamondLeggings;
+	public static Item dyeableDiamondBoots;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ItemStack diamondBlock = new ItemStack(Block.getBlockFromName("diamond_block"));
@@ -65,12 +71,35 @@ public class EffectBlock {
 		.setMaxDamage(5000)
 		.setFull3D();
 		
-		GameRegistry.registerItem(lightningRod, "Lightning Rod");
+		GameRegistry.registerItem(lightningRod, "Lightning_Rod");
 
 		ItemStack lightningRodStack = new ItemStack(lightningRod);
 		GameRegistry.addShapedRecipe(lightningRodStack,  "  x"," y ","y  ",
 				'x',netherStar,'y',diamondBlock);
 		
+		dyeableDiamondHelmet = new DyeableArmor()
+		.setUnlocalizedName("Dyeable_Helmet")
+		.setCreativeTab(CreativeTabs.tabCombat);
+		
+		dyeableDiamondChestplate = new DyeableArmor()
+		.setUnlocalizedName("Dyeable_Chestplate")
+		.setCreativeTab(CreativeTabs.tabCombat);
+		
+		dyeableDiamondLeggings = new DyeableArmor()
+		.setUnlocalizedName("Dyeable_Leggings")
+		.setCreativeTab(CreativeTabs.tabCombat);
+		
+		dyeableDiamondBoots = new DyeableArmor()
+		.setUnlocalizedName("Dyeable_Boots")
+		.setCreativeTab(CreativeTabs.tabCombat);
+		
+		GameRegistry.registerItem(dyeableDiamondHelmet, "Dyeable_Helmet");
+		
+		GameRegistry.registerItem(dyeableDiamondChestplate, "Dyeable_Chestplate");
+		
+		GameRegistry.registerItem(dyeableDiamondLeggings, "Dyeable_Leggings");
+
+		GameRegistry.registerItem(dyeableDiamondBoots, "Dyeable_Boots");
 		
 	}
 		

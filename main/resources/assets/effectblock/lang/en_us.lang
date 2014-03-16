@@ -1,2 +1,6 @@
 tile.EffectBlock.name=Effect Block
 item.lightningRod.name=Lightning Rod
+item.Dyeable_Helmet.name=Dyeable Helmet
+item.Dyeable_Chestplate.name=Dyeable Chestplate
+item.Dyeable_Leggings.name=Dyeable Leggings
+item.Dyeable_Boots.name=Dyeable Boots
