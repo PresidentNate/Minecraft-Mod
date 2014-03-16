@@ -65,11 +65,7 @@ public class EffectBlock {
 		/** Other Blocks???? */
 		lightningRod = new NatesItems()
 		.setUnlocalizedName("lightningRod")
-		.setTextureName(EffectBlock.MODID + ":" + "lightning_rod")
-		.setCreativeTab(CreativeTabs.tabCombat)
-		.setMaxStackSize(1)
-		.setMaxDamage(5000)
-		.setFull3D();
+		.setTextureName(EffectBlock.MODID + ":" + "lightning_rod");
 		
 		GameRegistry.registerItem(lightningRod, "Lightning_Rod");
 
@@ -77,29 +73,47 @@ public class EffectBlock {
 		GameRegistry.addShapedRecipe(lightningRodStack,  "  x"," y ","y  ",
 				'x',netherStar,'y',diamondBlock);
 		
+		
+		/** Dyeable diamond armor */
+		Item diamond_helmet = (Item) Item.itemRegistry.getObject("diamond_helmet");
+		Item diamond_chestplate = (Item) Item.itemRegistry.getObject("diamond_chestplate");
+		Item diamond_leggings = (Item) Item.itemRegistry.getObject("diamond_leggings");
+		Item diamond_boots = (Item) Item.itemRegistry.getObject("diamond_boots");
+		
+		Item diamond = (Item) Item.itemRegistry.getObject("diamond");
+		Item leather = (Item) Item.itemRegistry.getObject("leather");
+		
 		dyeableDiamondHelmet = new DyeableArmor()
 		.setUnlocalizedName("Dyeable_Helmet")
-		.setCreativeTab(CreativeTabs.tabCombat);
+		.setTextureName(EffectBlock.MODID +":" + "dyeable_helmet");
 		
 		dyeableDiamondChestplate = new DyeableArmor()
 		.setUnlocalizedName("Dyeable_Chestplate")
-		.setCreativeTab(CreativeTabs.tabCombat);
+		.setTextureName(EffectBlock.MODID +":" + "dyeable_chestplate");
 		
 		dyeableDiamondLeggings = new DyeableArmor()
 		.setUnlocalizedName("Dyeable_Leggings")
-		.setCreativeTab(CreativeTabs.tabCombat);
+		.setTextureName(EffectBlock.MODID +":" + "dyeable_leggings");
 		
 		dyeableDiamondBoots = new DyeableArmor()
 		.setUnlocalizedName("Dyeable_Boots")
-		.setCreativeTab(CreativeTabs.tabCombat);
+		.setTextureName(EffectBlock.MODID +":" + "dyeable_boots");
 		
 		GameRegistry.registerItem(dyeableDiamondHelmet, "Dyeable_Helmet");
+		ItemStack dyeableHelmetStack = new ItemStack(dyeableDiamondHelmet);
+		
+		
+		GameRegistry.addShapedRecipe(dyeableHelmetStack, "xxx","xyx","   ",'x',diamond_helmet,'y',diamond_helmet);
 		
 		GameRegistry.registerItem(dyeableDiamondChestplate, "Dyeable_Chestplate");
+		ItemStack dyeableChestplateStack = new ItemStack(dyeableDiamondChestplate);
 		
 		GameRegistry.registerItem(dyeableDiamondLeggings, "Dyeable_Leggings");
+		ItemStack dyeableLeggingsStack = new ItemStack(dyeableDiamondLeggings);
 
 		GameRegistry.registerItem(dyeableDiamondBoots, "Dyeable_Boots");
+		ItemStack dyeableBootsStack = new ItemStack(dyeableDiamondBoots);
+		
 		
 	}
 		

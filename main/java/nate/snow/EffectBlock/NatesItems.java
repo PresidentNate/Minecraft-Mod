@@ -7,6 +7,7 @@ import net.minecraft.world.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.*;
 import net.minecraft.command.*;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.*;
 
 
@@ -18,7 +19,10 @@ import net.minecraft.enchantment.*;
  */
 public class NatesItems extends Item {
 	protected NatesItems() {
-		
+		this.setCreativeTab(CreativeTabs.tabCombat);
+		this.setMaxStackSize(1);
+		this.setMaxDamage(5000);
+		this.setFull3D();
 	}
 	
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, int par4) {
