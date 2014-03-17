@@ -9,6 +9,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.*;
+import net.minecraft.entity.*;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -31,6 +34,7 @@ public class EffectBlock {
 		
 	public static Block effectBlock;
 	public static Item lightningRod;
+	public static EntityLiving eEntity;
 	
 	/* Dyeable diamond armor concept, know you can have multi-colored armor and still have good protection! */
 	public static Item dyeableDiamondHelmet;
@@ -40,20 +44,14 @@ public class EffectBlock {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		ItemStack diamondBlock = new ItemStack(Block.getBlockFromName("diamond_block"));
 		
+		/* Materials to craft Effect Block */
+		ItemStack diamondBlock = new ItemStack(Block.getBlockFromName("diamond_block"));
 		Item netherStar = (Item) Item.itemRegistry.getObject("nether_star");
 		
-		/** Sets values for the EffectBlock */
+		/** Registers the EffectBlock -values set in NatesBlocks.java */
 		effectBlock = new NatesBlocks(Material.iron)
-		.setBlockName("EffectBlock")
-		.setHardness(5.0F)
-		.setStepSound(Block.soundTypeMetal)
-		.setCreativeTab(CreativeTabs.tabMisc)
-		.setResistance(5.0F)
 		.setBlockTextureName(EffectBlock.MODID+":"+"effect_block");
-				
-		effectBlock.setHarvestLevel("pickaxe", 3);
 
 		GameRegistry.registerBlock(effectBlock, effectBlock.getUnlocalizedName().substring(5));
 		
@@ -80,41 +78,51 @@ public class EffectBlock {
 		Item diamond_leggings = (Item) Item.itemRegistry.getObject("diamond_leggings");
 		Item diamond_boots = (Item) Item.itemRegistry.getObject("diamond_boots");
 		
-		Item diamond = (Item) Item.itemRegistry.getObject("diamond");
 		Item leather = (Item) Item.itemRegistry.getObject("leather");
-		
+				
+		/* Dyeable Helmet */
 		dyeableDiamondHelmet = new DyeableArmor()
 		.setUnlocalizedName("Dyeable_Helmet")
 		.setTextureName(EffectBlock.MODID +":" + "dyeable_helmet");
-		
-		dyeableDiamondChestplate = new DyeableArmor()
-		.setUnlocalizedName("Dyeable_Chestplate")
-		.setTextureName(EffectBlock.MODID +":" + "dyeable_chestplate");
-		
-		dyeableDiamondLeggings = new DyeableArmor()
-		.setUnlocalizedName("Dyeable_Leggings")
-		.setTextureName(EffectBlock.MODID +":" + "dyeable_leggings");
-		
-		dyeableDiamondBoots = new DyeableArmor()
-		.setUnlocalizedName("Dyeable_Boots")
-		.setTextureName(EffectBlock.MODID +":" + "dyeable_boots");
-		
+
 		GameRegistry.registerItem(dyeableDiamondHelmet, "Dyeable_Helmet");
 		ItemStack dyeableHelmetStack = new ItemStack(dyeableDiamondHelmet);
 		
+		dyeableDiamondHelmet.isValidArmor(dyeableHelmetStack, 0, eEntity);
+		dyeableDiamondHelmet.getArmorModel(eEntity, dyeableHelmetStack, 0);
+	
+		GameRegistry.addShapedRecipe(dyeableHelmetStack, "xxx","xyx",'x',leather,'y',diamond_helmet);
 		
-		GameRegistry.addShapedRecipe(dyeableHelmetStack, "xxx","xyx","   ",'x',diamond_helmet,'y',diamond_helmet);
-		
+		/* Dyeable Chestplate */
+		dyeableDiamondChestplate = new DyeableArmor()
+		.setUnlocalizedName("Dyeable_Chestplate")
+		.setTextureName(EffectBlock.MODID +":" + "dyeable_chestplate");
+
 		GameRegistry.registerItem(dyeableDiamondChestplate, "Dyeable_Chestplate");
 		ItemStack dyeableChestplateStack = new ItemStack(dyeableDiamondChestplate);
+	
+		GameRegistry.addShapedRecipe(dyeableChestplateStack, "xyx","xxx","xxx",'x',leather,'y',diamond_chestplate);
 		
+		/* Dyeable Leggings */
+		dyeableDiamondLeggings = new DyeableArmor()
+		.setUnlocalizedName("Dyeable_Leggings")
+		.setTextureName(EffectBlock.MODID +":" + "dyeable_leggings");
+
+
 		GameRegistry.registerItem(dyeableDiamondLeggings, "Dyeable_Leggings");
 		ItemStack dyeableLeggingsStack = new ItemStack(dyeableDiamondLeggings);
+		
+		GameRegistry.addShapedRecipe(dyeableLeggingsStack, "xxx","xyx","x x",'x',leather,'y',diamond_leggings);
+
+		/* Dyeable Boots */
+		dyeableDiamondBoots = new DyeableArmor()
+		.setUnlocalizedName("Dyeable_Boots")
+		.setTextureName(EffectBlock.MODID +":" + "dyeable_boots");
 
 		GameRegistry.registerItem(dyeableDiamondBoots, "Dyeable_Boots");
 		ItemStack dyeableBootsStack = new ItemStack(dyeableDiamondBoots);
 		
-		
+		GameRegistry.addShapedRecipe(dyeableBootsStack, "xyx","x x",'x',leather,'y',diamond_boots);
 	}
 		
 }

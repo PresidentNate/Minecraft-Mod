@@ -20,6 +20,12 @@ public class NatesBlocks extends Block {
 	protected NatesBlocks(Material material) {
 		super(material);
 		// TODO Auto-generated constructor stub
+		this.setBlockName("EffectBlock");
+		this.setHardness(5.0F);
+		this.setStepSound(Block.soundTypeMetal);
+		this.setCreativeTab(CreativeTabs.tabMisc);
+		this.setResistance(5.0F);
+		this.setHarvestLevel("pickaxe", 3);
 		
 	}
 	
