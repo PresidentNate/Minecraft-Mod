@@ -29,7 +29,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class EffectBlock {
 	
 	public static final String MODID = "effectblock";
-	public static final String version = "0.0.5";
+	public static final String version = "0.0.6";
 	public static final String name = "Effect Block";
 		
 	public static Block effectBlock;
