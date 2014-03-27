@@ -26,6 +26,7 @@ public class NatesItems extends Item {
 	}
 	
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, int par4) {
+		
 		System.out.println(
 				"ItemStack: " +par1ItemStack + 
 				" EntityPlayer: " +par2EntityPlayer + 

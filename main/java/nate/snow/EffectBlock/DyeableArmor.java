@@ -19,7 +19,11 @@ public class DyeableArmor extends Item {
 	}
 	
 	public boolean isValidArmor(ItemStack stack, int type, Entity entity) {
-		
+				
+		return true;
+	}
+	
+	public boolean isDamageable() {
 		return true;
 	}
 

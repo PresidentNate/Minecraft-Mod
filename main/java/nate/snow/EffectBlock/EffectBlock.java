@@ -36,7 +36,7 @@ public class EffectBlock {
 	public static Item lightningRod;
 	public static EntityLiving eEntity;
 	
-	/* Dyeable diamond armor concept, know you can have multi-colored armor and still have good protection! */
+	/* Dyeable diamond armor concept, now you can have multi-colored armor and still have good protection! */
 	public static Item dyeableDiamondHelmet;
 	public static Item dyeableDiamondChestplate;
 	public static Item dyeableDiamondLeggings;
